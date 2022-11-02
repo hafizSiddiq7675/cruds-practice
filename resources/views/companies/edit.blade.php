@@ -59,22 +59,24 @@
                         @enderror
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Gender:</strong>
-                        <br/>
-                        <strong>Male:</strong>
-                        <input type="radio" name="gender" value="{{ $company->gender }}" 
-                            placeholder="Company Address">
-                            <strong>Female:</strong>
-                            <input type="radio" name="gender" value="{{ $company->gender }}" 
-                            placeholder="Company Address">
-                        @error('gender')
-                       
-                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror
-                    </div>
+                <div class="form-group row ">
+                    <div class="col-md-12">
+                        <label for="gender" class= "col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+                <div class="form-check form-check-inline" >
+                    <input class="form-check-input" type="radio" name="gender" @if ($company->gender == 'male')
+                        checked
+                    @endif value="{{ $company->gender}}">
+                    <label class="form-check-label" for="male">Male</label>
                 </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" @if ($company->gender == 'female')
+                    checked
+                @endif value="{{ $company->gender}}">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+                    </div>
+
+            </div>
                 <button type="submit" class="btn btn-primary ml-3">Submit</button>
             </div>
         </form>

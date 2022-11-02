@@ -35,13 +35,15 @@ class CompanyController extends Controller
     */
     public function store(Request $request)
     {
+        // echo '<pre>'; print_r($request->all()); exit;
         $request->validate([
             'name' => 'required',
             'email' => 'required',
             'address' => 'required',
-            'gender' => 'required',
+            'gender'=> 'required',
+
         ]);
-        
+        // echo '<pre>'; print_r('here'); exit;
         Company::create($request->post());
 
         return redirect()->route('companies.index')->with('success','Company has been created successfully.');
@@ -82,7 +84,7 @@ class CompanyController extends Controller
             'name' => 'required',
             'email' => 'required',
             'address' => 'required',
-            'gender' => 'required',
+            'gender'=> 'required',
 
         ]);
         

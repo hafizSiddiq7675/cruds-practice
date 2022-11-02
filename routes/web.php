@@ -20,3 +20,6 @@ Route::get('/', function () {
 
  
 Route::resource('companies', CompanyController::class);
+
+Route::get('/image', [ImageController::class,'index'])->name('image.index');
+Route::post('/image', [ImageController::class,'store'])->name('image.store');

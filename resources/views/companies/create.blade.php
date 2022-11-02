@@ -54,8 +54,32 @@
                         @enderror
                     </div>
                 </div>
+                <div class="form-group row ">
+                    <div class="col-md-12">
+                        <label for="gender" class= "col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+                <div class="form-check form-check-inline" >
+                    <input class="form-check-input" type="radio" name="gender" value="male">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+                    </div>
+
+            </div>
+           
+            <label class="block mb-4">
+                <span class="sr-only">Choose File</span>
+                <input type="file" name="image"
+                    class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+                @error('image')
+                <span class="text-red-600 text-sm">{{ $message }}</span>
+                @enderror
+            </label>
                 <button type="submit" class="btn btn-primary ml-3">Submit</button>
             </div>
+
         </form>
     </div>
 </body>

@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2> CRUD Practice </h2>
+                    <h2>Laravel Practise</h2>
                 </div>
                 <div class="pull-right mb-2">
                     <a class="btn btn-success" href="{{ route('companies.create') }}"> Create Company</a>
@@ -30,9 +30,8 @@
                     <th>Company Email</th>
                     <th>Company Address</th>
                     <th>Gender</th>
-
+                    <th>image</th>
                     <th width="280px">Action</th>
-                  
                 </tr>
             </thead>
             <tbody>
@@ -43,7 +42,8 @@
                         <td>{{ $company->email }}</td>
                         <td>{{ $company->address }}</td>
                         <td>{{ $company->gender }}</td>
-
+                        <td>{{ $company->image }}</td>
+                        
                         <td>
                             <form action="{{ route('companies.destroy',$company->id) }}" method="Post">
                                 <a class="btn btn-primary" href="{{ route('companies.edit',$company->id) }}">Edit</a>
